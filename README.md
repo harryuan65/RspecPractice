@@ -1,4 +1,4 @@
-# RspecLearning
+# RspecPractice
 
 A repo which I try to learn rspec with.
 
