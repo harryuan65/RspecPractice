@@ -3,11 +3,7 @@ RSpec.describe 'let' do
     let(:current_time) { Time.now }
 
     before(:each) do
-      puts <<~DOC
-        ======================
-            Example 開始
-        ======================
-      DOC
+      puts "==== Example ===="
     end
 
     it "should be evaluated only once in this example(because lazy-evaluated)" do
