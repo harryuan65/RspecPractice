@@ -2,17 +2,32 @@ RSpec.describe 'let' do
   describe 'let' do
     let(:current_time) { Time.now }
 
+    before(:each) do
+      puts <<~DOC
+        ======================
+            Example 開始
+        ======================
+      DOC
+    end
+
     it "should be evaluated only once in this example(because lazy-evaluated)" do
-      puts current_time # => 2021-01-08 14:42:49 +0800
+      puts <<~DOC
+        * 這邊會讀取一次
+        current_time = #{current_time}
+      DOC
 
       sleep(3)
+      puts "* 睡了三秒"
 
-      puts current_time # => 2021-01-08 14:42:49 +0800
+      puts <<~DOC
+        * 這邊不讀取，用cache的資料
+        current_time = #{current_time}
+      DOC
     end
 
     it "it should be evaluated again in this example" do
-      puts "This is run 3 seconds later"
-      puts current_time # => 2021-01-08 14:42:52 +0800
+      puts "這邊會讀取一次"
+      puts current_time
     end
   end
 end
