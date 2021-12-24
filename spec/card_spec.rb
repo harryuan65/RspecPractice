@@ -29,4 +29,8 @@ RSpec.describe 'Card' do
     card.suit = 'Queen'
     expect(card.suit).to eq('Queen')
   end
+
+  it 'should fail' do
+    expect(card.suit).to eq('Apple'), "Hey expected Apple but got #{card.suit}"
+  end
 end
