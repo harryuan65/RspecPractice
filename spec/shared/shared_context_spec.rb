@@ -1,3 +1,7 @@
+puts <<~DOC
+  \e[33m The include_context method injects context (i.e. before blocks, instance variables, helper methods, let variables) into an example group. \e[0m
+DOC
+
 RSpec.shared_context 'common' do
   # body of a context
   before do

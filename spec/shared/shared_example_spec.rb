@@ -1,5 +1,6 @@
 puts <<~DOC
   \e[36m
+  The include_examples method injects predefined examples into an example group.
   RSpec.describe Array do
     subject { [1, 2, 3] }
 
