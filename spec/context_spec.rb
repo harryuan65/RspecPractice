@@ -4,14 +4,16 @@ RSpec.describe '#event?' do
   # it 'should return true if number is even'
   # it 'should return true if number is odd'
   # if number is... this is context!
+  # #context is the same as #describe, just to be more readable!
+  # describe and context is nestable, use nesting to make more readable.
 
-  describe 'with even number' do
+  context 'with even number' do
     it 'should return true' do
       expect(4.even?).to eq(true)
     end
   end
 
-  describe 'with odd number' do
+  context 'with odd number' do
     it 'should return true' do
       expect(3.odd?).to eq(true)
     end
