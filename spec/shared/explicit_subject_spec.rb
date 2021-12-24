@@ -1,4 +1,14 @@
 RSpec.describe Hash do
+  before(:all) do
+    puts <<-DOC
+      \e[33m
+      We can also overwrite the \e[34m"#subject"\e[33m method to
+      1. give it a name for clearer access
+      2. pass in arguments for #new
+      \e[0m
+    DOC
+  end
+
   subject(:harry) do
     {
       name: 'harry',

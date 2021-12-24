@@ -1,7 +1,13 @@
 RSpec.describe Hash do
-  # let(:my_hash) { Hash.new } # don't need this line!
-  # RSpec provides "subject" which instanciates a new instance of the describe Class.
-  # is lazy-loaded and cached within each example.
+  before(:all) do
+    puts <<-DOC
+      \e[33m
+      RSpec provides "#subject" which automatically instanciates a new instance of the describe Class,
+        and we can use it to replace let blocks like
+      \e[34mlet(:my_hash) { Hash.new }\e[0m
+      \e[36mIt is lazy-loaded and cached within each example.\e[0m
+    DOC
+  end
 
   it 'should be empty' do
     puts subject.class
