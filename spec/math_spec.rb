@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'math calculations' do
   it 'should do proper adding' do
     expect(101 + 99).to eq(200)

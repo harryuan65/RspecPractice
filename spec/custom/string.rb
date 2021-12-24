@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe String do
   describe "String.new" do
     context "If it has initial value" do

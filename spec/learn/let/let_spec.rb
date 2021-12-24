@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'let' do
   describe 'let' do
     let(:current_time) { Time.now }
