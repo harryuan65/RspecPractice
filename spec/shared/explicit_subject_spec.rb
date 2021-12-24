@@ -25,4 +25,14 @@ RSpec.describe Hash do
   it 'bob is bob' do
     expect(bob[:name]).to eq('bob')
   end
+
+  describe 'nested example' do
+    it 'nested harry is still harry' do
+      expect(harry[:name]).to eq('harry')
+    end
+
+    it 'nested bob is still bob' do
+      expect(bob[:name]).to eq('bob')
+    end
+  end
 end
