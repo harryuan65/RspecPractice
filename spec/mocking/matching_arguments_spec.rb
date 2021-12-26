@@ -23,3 +23,9 @@ RSpec.describe 'matching argument' do
     three_element_array.first(100)
   end
 end
+
+# NOTE
+# We can mock the all behavior of the original object,
+# but what do we do if the original object's behavior changes? We need to change all the mocked behavior as well??
+#
+#   => see ./instance_doubles_spec.rb
