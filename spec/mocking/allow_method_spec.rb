@@ -38,4 +38,9 @@ RSpec.describe 'allow method review' do
     expect(mock_array.pop).to be_nil
     expect(mock_array.pop).to be_nil
   end
+
+  it 'can mock ENV as well' do
+    allow(ENV).to receive(:[]).with('DB_HOST').and_return('postgoob')
+    expect(ENV['DB_HOST']).to eq('postgoob')
+  end
 end
