@@ -2,5 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'rest-client'
 gem 'rspec', '~> 3.0'
 gem 'solargraph'
+gem 'webmock'
