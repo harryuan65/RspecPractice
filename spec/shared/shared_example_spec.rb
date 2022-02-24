@@ -69,3 +69,36 @@ end
 RSpec.describe SausageLink do
   include_examples 'a Ruby object with three elements'
 end
+
+RSpec.shared_examples 'able to add two elements' do |param1, param2|
+  it "#{param1} can add #{param2}" do
+    expect(param1).to respond_to(:+).with(1).argument
+    expect(param1 + param2).to be_truthy
+  end
+end
+
+RSpec.describe String do
+  include_examples 'able to add two elements', 'harry', 'jack'
+end
+
+RSpec.describe Integer do
+  include_examples 'able to add two elements', 1, 2
+end
+
+class Summary
+  attr_accessor :total
+
+  def initialize(total)
+    @total = total
+  end
+
+  def +(other)
+    @total += other.total
+    puts Rainbow("\tNow total is #{@total}").green.underline
+    @total
+  end
+end
+
+RSpec.describe Summary do
+  include_examples 'able to add two elements', Summary.new(1), Summary.new(3)
+end
