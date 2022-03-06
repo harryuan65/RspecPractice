@@ -29,3 +29,15 @@ end
 # but what do we do if the original object's behavior changes? We need to change all the mocked behavior as well??
 #
 #   => see ./instance_doubles_spec.rb
+class Notifier
+  def self.send(user_id, msg)
+    puts [user_id, msg]
+  end
+end
+
+RSpec.describe Notifier do
+  it 'should be called with user_id and msg' do
+    expect(described_class).to receive(:send).with(1, /msg/)
+    described_class.send(1, 'msg is sent')
+  end
+end
