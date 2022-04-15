@@ -8,3 +8,5 @@ gem 'solargraph'
 gem 'webmock'
 
 gem 'rainbow', '~> 3.0'
+gem 'rubocop'
+gem 'rubocop-rspec'
