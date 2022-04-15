@@ -1,0 +1,280 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  DisabledByDefault: false
+  TargetRubyVersion: 3.0.3
+  Exclude:
+    - bin/*
+    - config/initializers/*.rb
+    - db/**/*.rb
+    - dev/*.rb
+    - spec/**/*.rb
+    - config/puma.rb
+    - config/environments/*.rb
+    - test/**/*.rb
+
+RSpec:
+  Language:
+    Examples:
+      Regular:
+        - "run_test!"
+
+Style/GlobalVars:
+  Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Rails/Blank:
+  Enabled: true
+
+Style/StringLiterals:
+  Enabled: true
+
+Style/NumericLiterals:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/NumericPredicate:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/HashAlignment:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Layout/FirstHashElementIndentation:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+Layout/DotPosition:
+  Enabled: true
+
+Layout/ArrayAlignment:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Style/HashSyntax:
+  Enabled: true
+
+Style/WordArray:
+  Enabled: true
+
+Style/RaiseArgs:
+  EnforcedStyle: compact
+
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/BlockDelimiters:
+  Enabled: true
+
+Layout/BlockEndNewline:
+  Enabled: true
+
+Lint/RedundantStringCoercion:
+  Enabled: true
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+Style/MutableConstant:
+  Enabled: true
+
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+
+Layout/CommentIndentation:
+  Enabled: true
+
+Naming/RescuedExceptionsVariableName:
+  Enabled: true
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Style/AsciiComments: # 等我們事業做很大有歪國人的時候再打開
+  Enabled: false
+
+Style/RedundantCondition:
+  Enabled: true
+
+Style/OrAssignment:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
+
+Layout/ElseAlignment:
+  Enabled: true
+
+Style/Next:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/CaseLikeIf:
+  Enabled: true
+
+Style/ConditionalAssignment:
+  Enabled: true
+
+Style/IfUnlessModifier:
+  Enabled: true
+
+Rails/WhereNot:
+  Enabled: true
+
+Style/RedundantAssignment:
+  Enabled: true
+
+Rails/SquishedSQLHeredocs:
+  Enabled: true
+
+Style/TrailingCommaInArguments:
+  Enabled: true
+
+Layout/ArgumentAlignment:
+  Enabled: true
+
+Naming/PredicateName:
+  Enabled: true
+
+Lint/DuplicateBranch:
+  Enabled: true
+
+Metrics/ModuleLength:
+  Exclude:
+    - app/services/concerns/ranking_seed.rb
+
+# 以下待討論
+Naming/AccessorMethodName:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/SingleArgumentDig:
+  Enabled: false
+
+# 以下可能會改壞 XD 暫停
+
+Style/GuardClause: # 優先處理
+  Enabled: false
+
+Rails/TimeZone: # Assume UTC
+  Enabled: false
+
+Metrics/MethodLength: # 統一修
+  Enabled: false
+
+Metrics/BlockLength: # 統一修
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+RSpec/ExpectChange:
+  EnforcedStyle: block # expect { run }.to change { foo.baz }
+
+RSpec/ExampleLength:
+  Max: 10 # default 5 lines
+
+RSpec/MultipleExpectations:
+  Max: 1
+
+RSpec/BeforeAfterAll: # 待討論
+  Enabled: true
+
+RSpec/VariableName:
+  Enabled: true
+  Exclude:
+    - "spec/models/concerns/rangeable_spec.rb"
+
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - "**/spec/requests/api/*_spec.rb"
+
+RSpec/FilePath:
+  Enabled: false
