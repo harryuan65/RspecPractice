@@ -1,11 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (7.0.2.3)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.1)
     backport (1.1.2)
     benchmark (0.1.1)
+    concurrent-ruby (1.1.10)
     crack (0.4.5)
       rexml
     diff-lcs (1.4.4)
@@ -16,6 +22,8 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
+    i18n (1.10.0)
+      concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     kramdown (2.3.0)
       rexml
@@ -25,6 +33,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
     mini_portile2 (2.5.0)
+    minitest (5.15.0)
     netrc (0.11.0)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
@@ -34,6 +43,7 @@ GEM
       ast (~> 2.4.1)
     public_suffix (4.0.6)
     racc (1.5.2)
+    rack (2.2.3)
     rainbow (3.0.0)
     regexp_parser (2.0.3)
     rest-client (2.1.0)
@@ -68,6 +78,10 @@ GEM
       unicode-display_width (>= 1.4.0, < 2.0)
     rubocop-ast (1.4.0)
       parser (>= 2.7.1.5)
+    rubocop-rails (2.14.2)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.7.0, < 2.0)
     rubocop-rspec (2.4.0)
       rubocop (~> 1.0)
       rubocop-ast (>= 1.1.0)
@@ -88,6 +102,8 @@ GEM
       yard (~> 0.9, >= 0.9.24)
     thor (1.0.1)
     tilt (2.0.10)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
@@ -106,6 +122,7 @@ DEPENDENCIES
   rest-client
   rspec (~> 3.0)
   rubocop
+  rubocop-rails
   rubocop-rspec
   solargraph
   webmock
