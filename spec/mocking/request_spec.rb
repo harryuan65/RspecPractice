@@ -1,4 +1,8 @@
 require 'rest-client'
+# Setup
+# 1. gem 'webmock'
+# 2. require 'webmock/rspec' in spec_helper
+# 3. use #stub_request
 
 describe 'WebMock' do
   context 'stubbing any request' do
@@ -16,6 +20,7 @@ describe 'WebMock' do
       expect(RestClient.head('https://kon-peko', { 'X-API-KEY' => 'api_key' }).code).to eq(200)
     end
   end
+
   context 'stubbing a complex request' do
     before do
       stub_request(:get, /coffee-shop-666/)
@@ -23,7 +28,7 @@ describe 'WebMock' do
         .to_return(status: 200, body: 'OK', headers: { 'Access-Control-Allow-Origin' => '*' })
     end
 
-    it 'can stub a request ' do
+    it 'can stub a request' do
       res = RestClient.get('https://coffee-shop-666/buy_donut', { 'X-API-KEY' => 'api_key' })
       expect(res.code).to eq(200)
       expect(res.body).to eq('OK')
